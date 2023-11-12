@@ -20,7 +20,7 @@ const Layout = (props) => {
   },[])
   return (
    <div>
-      <div className="navbar shadow bg-base-100">
+      <div className="navbar fixed z-30 top-0  shadow bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,13 +30,13 @@ const Layout = (props) => {
             <li><NavLink to={"/"}>হোম</NavLink></li> 
               {
                 categories.map((item,index)=>{
-                  return  <li key={index}><NavLink to={"/byCategory/"+item['id']}>{item['name']}</NavLink></li>
+                  return  <li key={index.toString()}><NavLink to={"/byCategory/"+item['id']}>{item['name']}</NavLink></li>
                 })
               }
              
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn btn-ghost normal-case text-xl">BloG</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
